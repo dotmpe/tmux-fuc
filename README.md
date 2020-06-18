@@ -12,7 +12,7 @@ This tpm plugin shows your frequently used commands (fuc) with peco style. You c
 * [tmux](https://tmux.github.io/)
 * [peco](https://github.com/peco/peco)
 * [tpm](https://github.com/tmux-plugins/tpm)
-* pbcopy
+* xclip or pbcopy
 
 # Install
 
@@ -44,6 +44,14 @@ Default key binding is `Prefix + e`. If you change this key binding, set the fol
 set-option -g @fuc-key 'x' # or your favorite key binding
 ```
 
+After everything is setup, the selected script-line is copied to the clipboard.
+To use other  buffers/registers than clipboard, or other tool than xclip/bpcopy
+set fuc-copy-command to something other than the auto-detect value of either:
+```
+set-option -g @fuc-copy-command 'pbcopy -'
+set-option -g @fuc-copy-command 'xclip -sel clipboard -i'
+```
+
 # License
 
 MIT
@@ -51,3 +59,7 @@ MIT
 # Author
 
 [knakayama](https://github.com/knakayama)
+
+# Contributors
+
+[dotmpe](https://github.com/dotmpe)
